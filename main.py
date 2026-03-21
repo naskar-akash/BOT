@@ -14,6 +14,8 @@ def stop_bot():
     print("Stopping BOT....")
     running = False
 
+# Moves mouse to top-left corner, program crashes instantly as it just slam your mouse to (0,0) → instant stop
+pyautogui.FAILSAFE = True
 # Key to stop BOT
 keyboard.add_hotkey('esc', stop_bot)
 
