@@ -33,10 +33,10 @@ keyboard.add_hotkey('alt+p', toogle_pause)
 if __name__ == "__main__":
 
     # --- SET YOUR COORDINATES AND VARIABLES HERE ---
-    icon_x, icon_y = 1400, 1050    # coordinate of chrome icon
-    start_x, start_y = 980, 275   # Starting point of selection
-    end_x, end_y = 1380, 940       # Ending point of selection
-    deselect_x, deselect_y = 1742, 896   # deselecting selected text
+    icon_x, icon_y = 1400, 1048    # coordinate of chrome icon
+    start_x, start_y = 706, 259   # Starting point of selection
+    end_x, end_y = 857, 989       # Ending point of selection
+    deselect_x, deselect_y = 694, 313   # deselecting selected text
     TARGET_NAME = "My Home"
     last_message = ""
     
@@ -64,6 +64,7 @@ if __name__ == "__main__":
 
         # Get clipboard data
         chat_history = pyperclip.paste()
+        print("chat history: ", chat_history)
 
         # ✅ Only respond if message is from target
         if chat_history != last_message and is_msg_from_target(chat_history, TARGET_NAME):
