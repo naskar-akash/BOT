@@ -7,6 +7,7 @@ from check_chat import is_msg_from_target
 
 # global variable
 running = True
+paused = False
 
 # Function to stop function
 def stop_bot():
@@ -14,10 +15,19 @@ def stop_bot():
     print("Stopping BOT....")
     running = False
 
+# Function to pause/resume BOT
+def toogle_pause():
+    global paused
+    paused = not paused
+    print("Paused" if paused else "Resumed")
+
+
 # Moves mouse to top-left corner, program crashes instantly as it just slam your mouse to (0,0) → instant stop
 pyautogui.FAILSAFE = True
 # Key to stop BOT
 keyboard.add_hotkey('esc', stop_bot)
+# Key to pause/resume BOT
+keyboard.add_hotkey('alt+p', toogle_pause)
 
 
 if __name__ == "__main__":
@@ -35,6 +45,11 @@ if __name__ == "__main__":
     pyautogui.click(icon_x, icon_y)
 
     while running:
+        if paused:
+            time.sleep(1.0)
+            continue
+
+        # main code
         time.sleep(2.0)
 
         # Move to start position, drag upto end and click
