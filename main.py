@@ -1,8 +1,21 @@
 import pyautogui
 import pyperclip
 import time
+import keyboard
 from send_response import Response
-from check_chat import is_msg_from_target
+from check_chat import is_msg_from_target 
+
+# global variable
+running = True
+
+# Function to stop function
+def stop_bot():
+    global running
+    print("Stopping BOT....")
+    running = False
+
+# Key to stop BOT
+keyboard.add_hotkey('esc', stop_bot)
 
 
 if __name__ == "__main__":
@@ -19,7 +32,7 @@ if __name__ == "__main__":
     # click on the chrome icon
     pyautogui.click(icon_x, icon_y)
 
-    while True:
+    while running:
         time.sleep(2.0)
 
         # Move to start position, drag upto end and click
@@ -34,7 +47,6 @@ if __name__ == "__main__":
 
         # Get clipboard data
         chat_history = pyperclip.paste()
-        print(chat_history)
 
         # ✅ Only respond if message is from target
         if chat_history != last_message and is_msg_from_target(chat_history, TARGET_NAME):
