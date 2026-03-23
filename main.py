@@ -27,17 +27,17 @@ pyautogui.FAILSAFE = True
 # Key to stop BOT
 keyboard.add_hotkey('esc', stop_bot)
 # Key to pause/resume BOT
-keyboard.add_hotkey('alt+p', toogle_pause)
+keyboard.add_hotkey('f9', toogle_pause)
 
 
 if __name__ == "__main__":
 
     # --- SET YOUR COORDINATES AND VARIABLES HERE ---
     icon_x, icon_y = 1400, 1048    # coordinate of chrome icon
-    start_x, start_y = 706, 259   # Starting point of selection
+    start_x, start_y = 710, 250   # Starting point of selection
     end_x, end_y = 1612, 922       # Ending point of selection
     deselect_x, deselect_y = 694, 313   # deselecting selected text
-    TARGET_NAME = "My Home"
+    TARGET_NAME = "Babu Musaddi"
     last_message = ""
     
 
