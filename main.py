@@ -37,7 +37,7 @@ if __name__ == "__main__":
     start_x, start_y = 710, 250   # Starting point of selection
     end_x, end_y = 1612, 922       # Ending point of selection
     deselect_x, deselect_y = 694, 313   # deselecting selected text
-    TARGET_NAME = "Babu Musaddi"
+    TARGET_NAME = "Kele"
     last_message = ""
     
 
